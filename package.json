@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-learning",
+  "version": "1.0.0",
+  "description": "nodeJs auto learning from hazi_anhh",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoaianh1505-dev/NodeJs-Learning.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": {
+    "name": "Hazi_anhh",
+    "url": "https://github.com/hoaianh1505-dev"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoaianh1505-dev/NodeJs-Learning/issues"
+  },
+  "homepage": "https://github.com/hoaianh1505-dev/NodeJs-Learning#readme"
+}
