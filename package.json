@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/hoaianh1505-dev/NodeJs-Learning/issues"
   },
-  "homepage": "https://github.com/hoaianh1505-dev/NodeJs-Learning#readme"
+  "homepage": "https://github.com/hoaianh1505-dev/NodeJs-Learning#readme",
+  "dependencies": {
+    "express": "5.0.1"
+  }
 }
