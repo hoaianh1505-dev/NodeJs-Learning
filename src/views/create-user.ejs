@@ -13,22 +13,24 @@
 
 <body>
     <div style="width:600px;margin: auto;padding:5px; border:1px solid #ddd">
-        <h3 style="padding: 10px 0">Create a user</h3>
-        <div class="mb-3">
-            <label class="form-label">Name:</label>
-            <input type="email" class="form-control" placeholder="you name">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Email:</label>
-            <input type="email" class="form-control" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Address</label>
-            <textarea class="form-control" rows="2"></textarea>
-        </div>
-        <div class="mb-3">
-            <button class="btn btn-warning">Submit</button>
-        </div>
+        <h3 style="padding: 10px 0">Create a user:</h3>
+        <form action="/handle-create-user" method="post">
+            <div class="mb-3">
+                <label class="form-label">Name:</label>
+                <input type="text" class="form-control" placeholder="you name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email:</label>
+                <input type="email" class="form-control" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" rows="2"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-warning">Submit</button>
+            </div>
+        </form>
     </div>
 
 </body>
