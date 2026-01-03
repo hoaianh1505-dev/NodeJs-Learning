@@ -19,6 +19,6 @@ app.use(express.static('public'))
 webRoutes(app);
 
 app.listen(PORT, () => {
-    console.log(`My app is a funning on port ${PORT}`)
+    console.log(`My app is a funning on Port ${PORT}`)
 });
 
