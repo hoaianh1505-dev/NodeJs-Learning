@@ -12,10 +12,10 @@ const getHomePage = async (req: Request, res: Response) => {
 const getCreateUserPage = (req: Request, res: Response) => {
     return res.render("create-user")
 }
-const postCreateUserPage = (req: Request, res: Response) => {
+const postCreateUserPage = async (req: Request, res: Response) => {
     const { fullName, email, address } = req.body;
     //handle create user
-    handleCreateUser(fullName, email, address)
+    await handleCreateUser(fullName, email, address)
     return res.redirect("/")
 }
 export { getHomePage, getCreateUserPage, postCreateUserPage };
