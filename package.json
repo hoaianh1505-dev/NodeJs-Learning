@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/hoaianh1505-dev/NodeJs-Learning#readme",
   "dependencies": {
+    "dotenv": "16.4.7",
     "express": "5.0.1"
   },
   "devDependencies": {
