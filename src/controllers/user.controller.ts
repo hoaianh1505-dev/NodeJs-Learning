@@ -1,5 +1,4 @@
 import { getAllUsers, handleCreateUser } from '../services/user.service';
-import { CreateOptions } from './../../node_modules/ts-node/dist/index.d';
 import { Request, Response } from "express";
 const getHomePage = async (req: Request, res: Response) => {
     //Get users
