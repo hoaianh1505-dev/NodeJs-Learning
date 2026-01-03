@@ -1,15 +1,16 @@
 import express from "express";
 import 'dotenv/config';
+import webRoutes from "./routes/web";
 const app = express();
 const PORT = process.env.PORT || 8080;
-app.get("/", (req, res) => {
-    res.send("hello word update nodemon")
-})
-app.get("/hazi_anhh", (req, res) => {
-    res.send("hello Hazi_anhh")
-})
+
+// config view engine
+app.set('view engine', `ejs`);
+app.set('views', __dirname + `/views`);
+
+//config routes
+webRoutes(app);
 app.listen(PORT, () => {
     console.log(`My app is a funning on port ${PORT}`)
-    console.log("My port is in:", process.env.PORT)
 });
 
