@@ -14,7 +14,7 @@
 <body>
     <div style="width:600px;margin: auto;padding:5px; border:1px solid #ddd">
         <h3 style="padding: 10px 0">Create a user:</h3>
-        <form action="/handle-create-user" method="post">
+        <form action="/handle-update-user/<%= user.id %>" method="POST">
             <div class="mb-3">
                 <label class="form-label">Name:</label>
                 <input name="fullName" type="text" class="form-control" placeholder="you name" required>
