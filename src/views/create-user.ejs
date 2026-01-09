@@ -16,12 +16,16 @@
         <h3 style="padding: 10px 0">Create a user:</h3>
         <form action="/handle-create-user" method="POST">
             <div class="mb-3">
-                <label class="form-label">Name:</label>
+                <label class="form-label">fullName:</label>
                 <input name="fullName" type="text" class="form-control" placeholder="you name" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Email:</label>
-                <input name="email" type="email" class="form-control" placeholder="name@example.com">
+                <input name="username" type="email" class="form-control" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile">
             </div>
             <div class="mb-3">
                 <label class="form-label">Address</label>
