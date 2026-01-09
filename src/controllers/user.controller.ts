@@ -21,7 +21,7 @@ const postCreateUser = async (req: Request, res: Response) => {
     const { fullName, username, phone, role, address } = req.body;
     // handle create user
     const file = req.file;
-    const avatar = file?.filename ?? "";
+    const avatar = file?.filename ?? null;
     const a = await handleCreateUser(fullName, username, address, phone, avatar, role)
     return res.redirect("/admin/user")
 }
@@ -44,10 +44,12 @@ const getViewUser = async (req: Request, res: Response) => {
 
 }
 const postUpdateUser = async (req: Request, res: Response) => {
-    const { id, email, address, fullName } = req.body;
+    const { id, fullName, phone, role, address } = req.body;
+    const file = req.file;
+    const avatar = file?.filename ?? null;
     // get user by id
-    const a = await updateUserById(id, email, address, fullName);
-    return res.redirect("/");
+    await updateUserById(id, fullName, phone, role, address, avatar);
+    return res.redirect("/admin/user");
 
 }
 

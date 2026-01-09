@@ -55,9 +55,11 @@ const getUserById = async (id: string) => {
 }
 const updateUserById = async (
     id: string,
-    email: string,
+    fullName: string,
+    phone: string,
+    role: string,
     address: string,
-    fullName: string
+    avatar: string
 
 
 ) => {
@@ -65,10 +67,10 @@ const updateUserById = async (
         where: { id: +id },
         data: {
             fullName: fullName,
-            username: email,
+            phone: phone,
+            roleId: +role,
             address: address,
-            password: "",
-            accountType: ""
+            ...(avatar !== undefined && { avatar: avatar })
         }
     })
     return updatedUser;
