@@ -1,5 +1,6 @@
 import { getAllRoles, getAllUsers, getUserById, handleCreateUser, handleDeleteUser, updateUserById } from '../services/user.service';
 import { Request, Response } from "express";
+
 const getHomePage = async (req: Request, res: Response) => {
     //Get users
     const users = await getAllUsers();
@@ -17,9 +18,9 @@ const getCreateUserPage = async (req: Request, res: Response) => {
     )
 }
 const postCreateUser = async (req: Request, res: Response) => {
-    const { fullName, email, address } = req.body;
+    const { fullName, username, phone, address, role } = req.body;
     //handle create user
-    const a = await handleCreateUser(fullName, email, address)
+    // const a = await handleCreateUser(fullName, email, address)
     return res.redirect("/")
 }
 
