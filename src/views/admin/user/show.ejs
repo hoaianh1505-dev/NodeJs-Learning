@@ -64,12 +64,12 @@
                                                 </td>
                                                 <td>
                                                     <div style="display:flex;gap:10px">
-                                                        <form action="/handle-view-user/<%= user.id%>" method="get">
+                                                        <form action="/admin/view-user/<%= user.id%>" method="get">
                                                             <button class="btn btn-warning" type="submit">
                                                                 View user <%= user.id%>
                                                             </button>
                                                         </form>
-                                                        <form action="/handle-delete-user/<%= user.id%>" method="post">
+                                                        <form action="/admin/delete-user/<%= user.id%>" method="post">
                                                             <button class="btn btn-danger" type="submit">
                                                                 Delete user <%= user.id%>
                                                             </button>
