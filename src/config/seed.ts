@@ -2,7 +2,7 @@ import { hashPassword } from "src/services/user.service";
 import { prisma } from "./client";
 import { ACCOUNT_TYPE } from "./constant";
 
-const initDayabase = async () => {
+const initDatabase = async () => {
     const countUser = await prisma.user.count();
     const countRole = await prisma.role.count();
 
@@ -51,4 +51,4 @@ const initDayabase = async () => {
     }
 
 }
-export default initDayabase;
+export default initDatabase;
