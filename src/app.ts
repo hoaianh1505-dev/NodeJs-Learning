@@ -23,6 +23,6 @@ webRoutes(app);
 //seeding data
 initDatabase();
 app.listen(PORT, () => {
-    console.log(`My app is a funning on Port ${PORT}`)
+    console.log(`My app is a funning on http://localhost:${PORT}`)
 });
 

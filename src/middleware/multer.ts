@@ -8,7 +8,10 @@ const fileUploadMiddleware = (
 ) => {
     return multer({
         storage: multer.diskStorage({
-            destination: 'public/' + dir,
+            destination: (req, file, cb) => {
+                console.log("Uploading file to:", 'public/' + dir);
+                cb(null, 'public/' + dir);
+            },
             filename: (req, file, cb) => {
                 //callback
                 const extention = path.extname(file.originalname)
@@ -33,7 +36,7 @@ const fileUploadMiddleware = (
                 cb(new Error('Only JPEG and PNG images are allowed.'), false)
             }
         }
-    }).single(fieldName)
-}
+    }).single(fieldName);
+};
 
 export default fileUploadMiddleware

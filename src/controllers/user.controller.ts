@@ -3,11 +3,8 @@ import { Request, Response } from "express";
 
 const getHomePage = async (req: Request, res: Response) => {
     //Get users
-    const users = await getAllUsers();
     // console.log("All users", users)
-    return res.render("home", {
-        users: users
-    })
+    return res.render("client/home/show.ejs")
 }
 const getCreateUserPage = async (req: Request, res: Response) => {
     const roles = await getAllRoles();
