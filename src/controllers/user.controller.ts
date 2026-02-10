@@ -5,8 +5,11 @@ import { Request, Response } from "express";
 const getHomePage = async (req: Request, res: Response) => {
     //Get users
     const products = await getProducts();
+    const user = req.user;
+    console.log(user)
     return res.render("client/home/show.ejs", {
-        products
+        products,
+        user
     })
 }
 const getCreateUserPage = async (req: Request, res: Response) => {

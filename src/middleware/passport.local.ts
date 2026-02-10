@@ -1,12 +1,21 @@
 import { prisma } from "config/client";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import { comparePassword } from "src/services/user.service";
+import { comparePassword, getUserById } from "src/services/user.service";
 
 const configPassportLocal = async () => {
     passport.use(
-        new LocalStrategy(async function verify(username, password, callback) {
-            console.log(username, password);
+        new LocalStrategy({
+            passReqToCallback: true
+        }, async function verify(req, username, password, callback) {
+            const { session } = req as any;
+            // if (session?.messages.length) {
+            //     session.messages = [];
+            // }
+            const messages = session.messages || [];
+
+            console.log(req.body);
+
             //check user exist
             const user = await prisma.user.findUnique({
                 where: { username: username }
@@ -24,6 +33,15 @@ const configPassportLocal = async () => {
             return callback(null, user);
         })
     );
+    passport.serializeUser(function (user: any, callback) {
+        callback(null, { id: user.id, username: user.username });
+    });
+
+    passport.deserializeUser(async function (user: any, callback) {
+        const { id, username } = user;
+        const userInDB = await getUserById(id);
+        return callback(null, { ...userInDB });
+    });
 
 }
 

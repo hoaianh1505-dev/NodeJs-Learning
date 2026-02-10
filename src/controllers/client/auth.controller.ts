@@ -7,7 +7,13 @@ const getRegisterPage = (req: Request, res: Response) => {
 }
 
 const getLoginPage = (req: Request, res: Response) => {
-    return res.render("client/auth/login")
+    const session = req.session as any;
+    const messages = session?.messages ?? [];
+    // Clear messages after reading to avoid displaying them again on refresh
+    if (session?.messages) {
+        delete session.messages;
+    }
+    return res.render("client/auth/login", { messages })
 }
 
 const postRegister = async (req: Request, res: Response) => {

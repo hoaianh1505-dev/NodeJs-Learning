@@ -1,3 +1,11 @@
+:root {
+    --bs-primary: #00d2ff !important;
+    --bs-secondary: #64748b !important;
+    --bs-dark: #0f172a !important;
+    --bs-light: #f8fafc !important;
+    --bs-white: #ffffff !important;
+    --text-muted: #94a3b8 !important;
+}
 
 /*** Spinner Start ***/
 #spinner {
@@ -5,7 +13,7 @@
     visibility: hidden;
     transition: opacity .8s ease-out, visibility 0s linear .5s;
     z-index: 99999;
- }
+}
 
  #spinner.show {
      transition: opacity .8s ease-out, visibility 0s linear .0s;
