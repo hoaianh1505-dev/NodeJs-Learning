@@ -4,12 +4,22 @@ import { getAdminOrderPage, getAdminProductPage, getAdminUserPage, getDashBoardP
 import fileUploadMiddleware from 'src/middleware/multer';
 import { getProductPage } from 'controllers/client/product.controller';
 import { getAdminCreateProductPage, getViewProduct, postAdminCreateProduct, postDeleteProduct, postUpdateProduct } from 'controllers/admin/product.controller';
+import { getLoginPage, getRegisterPage, postRegister } from 'controllers/client/auth.controller';
+import passport from 'passport';
 const multer = require('multer')
 // const upload = multer({ dest: 'uploads/' })
 const router = express.Router();
 const webRoutes = (app: Express) => {
     router.get("/", getHomePage)
     router.get("/product/:id", getProductPage)
+    router.get("/register", getRegisterPage)
+    router.post("/register", postRegister)
+    router.get("/login", getLoginPage)
+    router.post("/login", passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/login',
+        failureFlash: true
+    }))
     //admin routes
     router.get("/admin", getDashBoardPage)
     router.get("/admin/user", getAdminUserPage)
