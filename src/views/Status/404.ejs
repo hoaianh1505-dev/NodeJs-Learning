@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Trang không tồn tại</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --primary: #00d2ff;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 2rem;
+        }
+
+        .status-code {
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin: 0;
+            letter-spacing: -4px;
+            color: rgba(255, 255, 255, 0.05);
+            user-select: none;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-top: -2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        .divider {
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="status-code">404</div>
+        <div class="content">
+            <h1>Trang không tồn tại</h1>
+            <div class="divider"></div>
+            <p>Hệ thống không tìm thấy trang bạn yêu cầu. Có vẻ như liên kết đã cũ hoặc có nhầm lẫn trong địa chỉ URL.
+            </p>
+            <a href="/" class="btn">Về trang chủ</a>
+        </div>
+    </div>
+</body>
+
+</html>

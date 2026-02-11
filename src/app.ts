@@ -1,3 +1,4 @@
+/// <reference path="types/index.d.ts" />
 import express from "express";
 import 'dotenv/config';
 import webRoutes from "src/routes/web";
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 //config routes
 webRoutes(app);
 // getConnection();
@@ -60,7 +62,7 @@ initDatabase();
 
 //handle not found 404 
 app.use((req, res) => {
-    res.status(404).render("client/404/404.ejs");
+    res.render("Status/404.ejs");
 })
 
 app.listen(PORT, () => {

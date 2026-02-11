@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { RegisterSchema } from "src/validation/register.schema";
 import { registerNewUser } from "src/services/client/auth.service";
 
@@ -52,8 +52,23 @@ const postRegister = async (req: Request, res: Response) => {
     return res.redirect("/login");
 }
 
+const getSuccessRedirect = (req: Request, res: Response) => {
+    const user = req.user as any;
+    if (user?.role?.name === "ADMIN") {
+        return res.redirect("/admin");
+    }
+    return res.redirect("/");
+}
+const postLogout = (req: Request, res: Response, next: NextFunction) => {
+    req.logout((err) => {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+}
 export {
     getRegisterPage,
     getLoginPage,
-    postRegister
+    postRegister,
+    getSuccessRedirect,
+    postLogout
 }

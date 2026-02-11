@@ -31,4 +31,29 @@ const registerNewUser = async (fullName: string, email: string, password: string
 
     return newUser;
 }
-export { registerNewUser }
+const getUserWithRoleById = async (id: string) => {
+    const user = await prisma.user.findUnique({
+        where: { id: +id },
+        include: {
+            role: true
+        },
+        omit: {
+            password: true
+        }
+    })
+    return user;
+}
+const getUserSumCart = async (id: string) => {
+    const cart = await prisma.cart.findUnique({
+        where: { userId: +id },
+        include: {
+            cartDetails: true
+        }
+    })
+    if (!cart) return 0;
+
+    // Calculate total quantity from current items in cart
+    const total = cart.cartDetails.reduce((acc, item) => acc + item.quantity, 0);
+    return total;
+}
+export { registerNewUser, getUserWithRoleById, getUserSumCart }
